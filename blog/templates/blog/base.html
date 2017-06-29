@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bornikkeny Blog</title>
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+   <div id="site">
+      <div id="head">
+         <div id="logo">
+            <h1><a href="/">Bornikkeny blog</a></h1>
+         </div>
+         <div id="menu">
+            <ul class="navigation">
+               <li><a href="{% url 'post_new' %}">Новый пост</a></li>
+               <li><a href="#">Портфолио</a>
+                  <ul>
+                     <li><a href="#">2016</a></li>
+                     <li><a href="#">2017</a></li>
+                  </ul>
+               </li>
+               <li><a href="/admin">Панель управления</a></li>
+            </ul>
+         </div>
+      </div>
+
+      <div id="content">
+         {% block content %}
+         {% endblock %}
+      </div>
+   </div>
+</body>
+</html>

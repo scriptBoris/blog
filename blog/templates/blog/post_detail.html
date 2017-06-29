@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="post">
+   <div class="post_head">
+      {% if user.is_authenticated %}
+         <a class="post_edit" href="{% url 'post_edit' pk=post.pk %}"></a>
+      {% endif %}
+      {% if post.published_date %}
+         <span class="post_date">опубликованно: {{ post.published_date }}</span>
+      {% endif %}
+      <a class="post_title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+   </div>
+   <span class="post_text"><p>{{ post.text|linebreaksbr }}</p></span>
+</div>
+{% endblock  %}

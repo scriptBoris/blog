@@ -1,0 +1,160 @@
+* {
+   padding: 0;
+   margin: 0;
+}
+html{
+   min-height: 100%;
+}
+body {
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+	background: linear-gradient(15deg, #ddd, #ccc, #eee);
+}
+
+#site {
+   width: 700px;
+   height: 100%;
+   margin: auto;
+}
+#logo{
+   float:left;
+   height: 170px;
+   width: 100%;
+   background-image: url(boris03.jpg);
+   background-position: center;
+   background-size: 700px;
+}
+#logo h1{
+   position: relative;
+   margin: 0;
+   padding: 0;
+   font-family: 'Lobster', cursive;
+}
+#logo a{
+   float: left;
+   display: block;
+   position: relative;
+   top:115px;
+   width: 100%;
+   height: 55px;
+   background: linear-gradient(90deg, #ddd, #eee, #ddd);
+   text-decoration: none;
+   text-align: center;
+   color: #444;
+   font-size: 36pt;
+   text-decoration: none;
+   font-family: 'Forte';
+}
+
+#logo a:hover {
+   background: linear-gradient(90deg, #eee, #ddd, #eee);
+   color: #000;
+}
+#menu{
+   float:left;
+   height: 40px;
+   width:100%;
+}
+.navigation{
+   display: block;
+   float:left;
+   position: relative;
+   width:100%;
+   background-color: #222;
+   z-index: 200;
+}
+.navigation li {
+   display: block;
+   float: left;
+   position: relative;
+   background-color: #222;
+   color: #eee;
+}
+.navigation li:hover {
+  background: #444;
+}
+.navigation li a {
+   display: block;
+   min-width:100px;
+   padding: 10px;
+   color: #eee;
+   text-decoration:none;
+   text-align:center;
+}
+.navigation ul {
+  display: none;
+  position: absolute;
+  list-style: none;
+  overflow: hidden;
+}
+.navigation ul li {
+  float: none;
+}
+
+.navigation li:hover > ul {
+  display: block;
+}
+.navigation li li a:hover {
+   background-color: #444;
+   color: #aaa;
+}
+
+#content{
+   display: block;
+   float:left;
+   background-color: #ccc;
+   width: 100%;
+   z-index: 2;
+}
+
+.post {
+   float: left;
+   width: 100%;
+   padding: 10px 0 10px 0;
+   background: linear-gradient(130deg, #ddd, #eee, #fff);
+}
+.post_head{
+   padding-left: 10px;
+   float:left;
+   width: 98%;
+}
+.post_date{
+   float:right;
+   width:30%;
+   text-align: right;
+}
+.post_title {
+   float:left;
+   position: relative;
+   width: 50%;
+   text-decoration: none;
+   font-family: 'Constantia';
+   font-style: italic;
+   font-size: 20pt;
+   line-height: 25px;
+   color: #333;
+}
+.post_title:hover {
+   text-decoration: none;
+   color: #000;
+}
+.post_edit {
+   display: block;
+   float:right;
+   position:relative;
+   height:38px;
+   width:38px;
+   background-image: url(post_edit.png)
+}
+.post_text p{
+   padding: 0 10px 0 10px;
+   display: block;
+   float:left;
+}
+
+.post-form label{
+
+}
+.post-form textarea, .post-form input{
+   width:100%;
+}
