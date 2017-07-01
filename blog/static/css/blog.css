@@ -138,14 +138,15 @@ body {
    text-decoration: none;
    color: #000;
 }
-.post_edit {
+.post_edit, .post_delete {
    display: block;
    float:right;
    position:relative;
    height:38px;
    width:38px;
-   background-image: url(post_edit.png)
 }
+.post_edit  {background-image: url(post_edit.png);}
+.post_delete{background-image: url(post_delete.png);}
 .post_text p{
    padding: 0 10px 0 10px;
    display: block;
