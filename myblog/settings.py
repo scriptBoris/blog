@@ -25,7 +25,7 @@ SECRET_KEY = '5e9bai006_)xq14x99i_u9v(#@gq876$9+eqhlw1tj7c0$_zw2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['scriptboris.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
