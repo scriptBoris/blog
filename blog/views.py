@@ -42,3 +42,6 @@ def post_delete(request, pk):
     post = Post.objects.get(pk=pk)
     Post.objects.filter(pk=pk).delete()
     return redirect('post_list')
+
+def post_up(request):
+    return
