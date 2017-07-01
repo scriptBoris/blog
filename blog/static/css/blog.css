@@ -47,11 +47,24 @@ body {
    float: right;
    top: -70px;
    background-color: #fff;
+   padding:5px;
 }
-#userBox input{
-   margin:4px;
+#userBox p{
+   margin:0;
+   padding:0;
+}
+#userBox label{
+   width:70px;
+   text-align: right;
+   margin: 0 5px 0 0;
+   padding: 0;
 }
 
+.userBoxBtn{
+   float:left;
+   width:100px;
+   margin: 5px 0 5px 16px;
+}
 #menu{
    display: block;
    position: relative;

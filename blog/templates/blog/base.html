@@ -17,8 +17,8 @@
                <form method="POST">
                   {% csrf_token %}
                   {{ form.as_p }}
-                  <button type="submit" class="btnSave">Вход</button>
-                  <input class="bottomUserBox" type="button" name="confirm" value="Регистрация">
+                  <button class="userBoxBtn" type="submit">Вход</button>
+                  <button class="userBoxBtn" type="button">Регистрация</button>
                </form>
             </div>
             {% endif %}

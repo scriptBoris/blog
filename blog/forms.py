@@ -9,9 +9,9 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'text',)
 
 class UserBoxForm(forms.ModelForm):
-    #login = forms.CharField(label='Login', max_length=10)
+    name = forms.CharField(label='логин', max_length=10)
     #password = forms.CharField(label='Password', max_length=10)
-
+    password = forms.CharField(widget=forms.PasswordInput, label="пароль")
     class Meta:
         model = User
         fields = ('name', 'password',)
