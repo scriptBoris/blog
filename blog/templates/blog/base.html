@@ -12,38 +12,62 @@
       <div id="head">
          <div id="logo">
             <a href="/">Bornikkeny blog</a>
-            {% if User.name == note %}
+         </div>
+         {% if user.is_authenticated == False %}
             <div id="userBox">
-               <form method="POST">
-                  {% csrf_token %}
-                  {{ form.as_p }}
+               <form method="POST" action="http://{{ request.get_host }}/auth/login">{% csrf_token %}
+                  <input type="text"     name="login"    placeholder="Логин">
+                  <input type="password" name="password" placeholder="Пароль">
                   <button class="userBoxBtn" type="submit">Вход</button>
-                  <button class="userBoxBtn" type="button">Регистрация</button>
+                  <button class="userBoxBtn" type="button"><a href="http://{{ request.get_host }}/auth/register">Регистрация</a></button>
                </form>
             </div>
-            {% endif %}
-         </div>
-         <div id="menu">
-            <li><a href="{% url 'post_new' %}">Новый пост</a></li>
-            <li><a href="#">Портфолио</a>
+         {% else %}
+            <div id="userBox">
+               Вы вошли как {{ user.username }} (<a href="http://{{ request.get_host }}/auth/logout">Выйти</a>)
+            </div>
+            <div class="menu" style="z-index:20;">
+               <li><a href="{% url 'post_new' %}">Новый пост</a></li>
+               <li><a href="/admin">Панель управления</a>
+                  <ul>
+                     <li><a href="https://www.pythonanywhere.com/user/scriptBoris/webapps/">Web</a></li>
+                     <li><a href="https://www.pythonanywhere.com/user/scriptBoris/consoles/">Consoles</a></li>
+                     <li><a href="https://www.pythonanywhere.com/user/scriptBoris/files/home/scriptBoris">Files</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">Switch to</a>
+                  <ul>
+                     <li><a href="http://scriptboris.pythonanywhere.com/">pythonanywhere</a></li>
+                     <li><a href="http://localhost:8000/">local machine</a></li>
+                  </ul>
+               </li>
+            </div>
+         {% endif %}
+         <!--EVERYBODY MENU-->
+         <div class="menu">
+            <li><a href="#">Проекты</a>
                <ul>
-                  <li><a href="#">2016</a></li>
-                  <li><a href="#">2016</a></li>
+                  <li><a href="#">Мой блог</a></li>
+                  <li><a href="#">Фриланс</a></li>
+                  <li><a href="#">Заказы друзей</a></li>
+                  <li><a href="#">Учеба</a></li>
                </ul>
             </li>
-            <li><a href="/admin">Панель управления</a>
+            <li><a href="/admin">Креатив</a>
                <ul>
-                  <li><a href="https://www.pythonanywhere.com/user/scriptBoris/webapps/">Web</a></li>
-                  <li><a href="https://www.pythonanywhere.com/user/scriptBoris/consoles/">Consoles</a></li>
-                  <li><a href="https://www.pythonanywhere.com/user/scriptBoris/files/home/scriptBoris">Files</a></li>
+                  <li><a href="#">Веб-дизайн</a></li>
+                  <li><a href="#">3D-арт</a></li>
+                  <li><a href="#">2D-арт</a></li>
                </ul>
             </li>
-            <li><a href="#">Switch to</a>
+            <li><a href="#">Категории</a>
                <ul>
-                  <li><a href="http://scriptboris.pythonanywhere.com/">pythonanywhere</a></li>
-                  <li><a href="http://localhost:8000/">local machine</a></li>
+                  <li><a href="#">Мысли в слух</a></li>
+                  <li><a href="#">Верхний интернет</a></li>
+                  <li><a href="#">Нижний интернет</a></li>
                </ul>
             </li>
+            <li><a href="#">О себе</a></li>
          </div>
       </div>
       <div id="content">

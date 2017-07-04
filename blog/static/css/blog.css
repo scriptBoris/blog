@@ -24,6 +24,7 @@ body {
    background-image: url(boris03.jpg);
    background-position: center;
    background-size: 700px;
+   z-index: 0;
 }
 #logo a{
    display: block;
@@ -43,38 +44,49 @@ body {
    color: #000;
 }
 #userBox{
-   position:relative;
-   float: right;
-   top: -70px;
+   position:absolute;
+   float: left;
+   right:0px;
    background-color: #fff;
    padding:5px;
+   text-align: right;
+   z-index: 1;
 }
-#userBox p{
-   margin:0;
-   padding:0;
+#userBox input{
+   float: left;
+   width: 100px;
+   height:20px;
+   margin: 2px;
 }
 #userBox label{
    width:70px;
-   text-align: right;
+   text-align: left;
    margin: 0 5px 0 0;
    padding: 0;
 }
 
-.userBoxBtn{
+#userBox button{
    float:left;
-   width:100px;
-   margin: 5px 0 5px 16px;
+   height:20px;
+   padding: 0 3px 0 3px;
+   margin: 2px 2px 2px 2px;
+   font-size: 7pt;
 }
-#menu{
+#userBox a{
+   text-decoration:none;
+   font-size: 9pt;
+}
+.menu{
    display: block;
    position: relative;
    float:left;
    height: 40px;
    width:100%;
    background-color: #222;
-   z-index: 200;
+   z-index: 10;
 }
-#menu li {
+
+.menu li {
    display: block;
    position: relative;
    float: left;
@@ -82,20 +94,20 @@ body {
    overflow: hidden;
    width: 25%;
 }
-#menu li a {
+.menu li a {
    display: block;
    padding: 10px;
    color: #eee;
    text-decoration:none;
    text-align:center;
 }
-#menu a:hover{
+.menu a:hover{
    background-color: #444;
 }
-#menu ul{
+.menu ul{
    display: none;
 }
-#menu ul li {
+.menu ul li {
    display: block;
    position: relative;
    float:none;
@@ -103,31 +115,31 @@ body {
    color: #eee;
    width: inherit;
 }
-#menu li:hover > ul {
+.menu li:hover > ul {
   display: block;
 }
 #content{
    display: block;
    float:left;
-   background-color: #ccc;
    width: 100%;
+   background-color: #ccc;
    z-index: 2;
 }
 
 .post {
    float: left;
    width: 100%;
-   padding: 10px 0 10px 0;
+   padding: 10px;
    background: linear-gradient(130deg, #ddd, #eee, #fff);
 }
 .post_head{
-   padding-left: 10px;
    float:left;
+   padding: 0 0 10px 10px;
    width: 98%;
 }
 .post_date{
    float:right;
-   width:30%;
+   width:33%;
    text-align: right;
 }
 .post_title {
