@@ -1,22 +1,11 @@
 from django.template  import *
 from django.http      import HttpResponse
 from django.contrib   import auth
+from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils     import timezone
 from .models          import Post
 from .forms           import PostForm
-
-def login(request):
-    login = request.POST['login']
-    password = request.POST['password']
-    user = auth.authenticate(username=login, password=password)
-    if user is not None:
-        auth.login(request, user)
-    return redirect("/")
-
-def logout(request):
-    auth.logout(request)
-    return redirect("/")
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -58,5 +47,23 @@ def post_delete(request, pk):
     Post.objects.filter(pk=pk).delete()
     return redirect('post_list')
 
-def user_register(request):
-    return
+def register(request):
+    if request.method == "POST":
+        user = User.objects.create_user(request.POST['login'], request.POST['email'], request.POST['password'] )
+        user.save()
+        if User == None:
+            render(request, 'blog/register.html')
+        render(request, 'blog/post_list.html')
+    return render(request, 'blog/register.html')
+
+def login(request):
+    login = request.POST['login']
+    password = request.POST['password']
+    user = auth.authenticate(username=login, password=password)
+    if user is not None:
+        auth.login(request, user)
+    return redirect("/")
+
+def logout(request):
+    auth.logout(request)
+    return redirect("/")

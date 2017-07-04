@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^post/(?P<pk>[0-9]+)/delete/$', views.post_delete,   name='post_delete'),
     url(r'^auth/login',                   views.login,         name='login'),
     url(r'^auth/logout',                  views.logout,        name='logout'),
+    url(r'^auth/register',                views.register,      name='register'),
 ]

@@ -8,7 +8,10 @@
             <span class="post_date">опубликованно: {{ post.published_date }}</span>
             <a class="post_title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
          </div>
-         <span class="post_text"><p>{{ post.text|linebreaksbr }}</p></span>
+         <div class="post_text">{{ post.text }}</div>
+         <div class="post_footer">
+            Рейтинг: {{ post.rate }}
+         </div>
       </div>
    {% endfor %}
 {% endblock content %}

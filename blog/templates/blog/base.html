@@ -11,7 +11,7 @@
    <div id="site">
       <div id="head">
          <div id="logo">
-            <a href="/">Bornikkeny blog</a>
+            <div><a href="/"> </a></div>
          </div>
          {% if user.is_authenticated == False %}
             <div id="userBox">
@@ -74,6 +74,9 @@
          {% block content %}
          {% endblock %}
       </div>
+      <footer>
+         <div>2055(c) Все права защищены, лалки</div>
+      </footer>
    </div>
 </body>
 </html>
