@@ -186,6 +186,30 @@ body {
 .post-form textarea, .post-form input{
    width:100%;
 }
+
+#paginator ul{
+   display: block;
+   position: relative;
+   float:none;
+   width: 100px;
+   margin:auto;
+   padding:auto;
+}
+
+#paginator li{
+   display: block;
+   position: relative;
+   float: left;
+   list-style: none;
+}
+#paginator a{
+   text-decoration: none;
+   font-size: 20pt;
+}
+#paginator .current{
+   color: red;
+}
+
 #reg_form span{
    position: relative;
    float:left;

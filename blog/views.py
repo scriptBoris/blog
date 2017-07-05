@@ -2,14 +2,16 @@ from django.template  import *
 from django.http      import HttpResponse
 from django.contrib   import auth
 from django.contrib.auth.models import User
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, render_to_response, get_object_or_404, redirect
 from django.utils     import timezone
+from django.core.paginator import Paginator
 from .models          import Post
 from .forms           import PostForm
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts} )
+def post_list(request, page_num=1):
+    posts = Post.objects.all().order_by('-created_date') #filter(created_date__lte=timezone.now()).order_by('-created_date')
+    current_page = Paginator(posts, 5)
+    return render_to_response('blog/post_list.html', {'posts': current_page.page(page_num)} )
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)

@@ -14,4 +14,31 @@
          </div>
       </div>
    {% endfor %}
+   <div class="clear"></div>
+   <div id="paginator">
+      <ul>
+      {% if posts.has_previous %}
+
+      {% else %}
+
+      {% endif %}
+
+      {% for page in posts.paginator.page_range %}
+
+         {% if page == posts.number %}
+            <li><a class="current" href="/page/{{ page }}">{{ page }}</a></li>
+         {% else %}
+            <li><a href="/page/{{ page }}/">{{ page }}</a></li>
+         {% endif %}
+
+      {% endfor %}
+
+      {% if posts.has_next %}
+
+      {% else %}
+
+      {% endif %}
+      </ul>
+   </div>
+
 {% endblock content %}
