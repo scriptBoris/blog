@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+   <div id="userInfo">
+   <span>Никнейм:</span><label>{{ user.username}}</label><br>
+   <span>Настоящее имя:</span><label>{{ user.first_name}} {{ user.last_name}}</label><br>
+   <span>Регистрация:</span><label>{{ user.date_joined}}</label><br>
+   </div>
+{% endblock %}

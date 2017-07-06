@@ -24,7 +24,7 @@
             </div>
          {% else %}
             <div id="userBox">
-               Вы вошли как {{ request.user.username }} (<a href="http://{{ request.get_host }}/auth/logout">Выйти</a>)
+               Вы вошли как <a href="/user/{{ request.user.username }}">{{ request.user.username }}</a> (<a href="http://{{ request.get_host }}/auth/logout">Выйти</a>)
             </div>
             <div class="menu" style="z-index:20;">
                <li><a href="{% url 'post_new' %}">Новый пост</a></li>

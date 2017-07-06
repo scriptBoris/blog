@@ -71,3 +71,7 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect("/")
+
+def user(request, name):
+    user = User.objects.get(username=name)
+    return render(request, 'blog/user.html', {'user': user} )

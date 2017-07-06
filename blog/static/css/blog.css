@@ -131,7 +131,21 @@ body {
    background-color: #ccc;
    z-index: 2;
 }
+footer{
+   display: block;
+   position:relative;
+   float:left;
+   width:100%;
+   background-color: #EEE;
+}
+footer div{
+   width: 100%;
+   line-height: 50px;
+   margin:auto;
+   text-align: center;
+}
 
+/*==========POST========*/
 .post {
    display: block;
    position: relative;
@@ -216,7 +230,7 @@ body {
 #paginator .arrow {
 
 }
-
+/*====FORM ON REGISTER===*/
 #reg_form span{
    position: relative;
    float:left;
@@ -230,16 +244,28 @@ body {
    padding:5px;
 
 }
-footer{
-   display: block;
-   position:relative;
-   float:left;
-   width:100%;
-   background-color: #EEE;
+#reg_form .help{
+   font-size: 8pt;
+   padding: 0 0 10px 238px;
 }
-footer div{
-   width: 100%;
-   line-height: 50px;
-   margin:auto;
-   text-align: center;
+#reg_form li{
+   text-decoration: none;
+   list-style: none;
+   padding-bottom: 3px;
+}
+#reg_form button{
+   position: relative;
+   float:left;
+   left: 238px;
+   width: 100px;
+}
+/*=======USER ABOUT======*/
+#userInfo{
+   padding: 10px;
+}
+#userInfo span{
+   float: left;
+   width: 200px;
+   text-align:right;
+   padding: 0 10px 0 0;
 }
