@@ -14,7 +14,9 @@
    </div>
    <div class="post_text">{{ post.text_full }}</div>
    <div class="post_footer">
-      Рейтинг: {{ post.rate }}
+      <a href="#">
+         <span>{{ post.rate }}</span>
+      </a>
    </div>
 </div>
 {% endblock  %}

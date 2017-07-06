@@ -10,7 +10,7 @@ from .forms           import PostForm
 
 def post_list(request, page_num=1):
     posts = Post.objects.all().order_by('-created_date') #filter(created_date__lte=timezone.now()).order_by('-created_date')
-    current_page = Paginator(posts, 5)
+    current_page = Paginator(posts, 7)
     return render(request, 'blog/post_list.html', {'posts': current_page.page(page_num)} )
 
 def post_detail(request, pk):
@@ -50,15 +50,18 @@ def post_delete(request, pk):
     return redirect('post_list')
 
 def register(request):
+    error = ""
     if request.method == "POST":
         user = User.objects.create_user(request.POST['login'], request.POST['email'], request.POST['password'] )
         user.save()
         if user == None:
-            return render(request, 'blog/register.html')
+            error = "Ошибка"
         else:
-            return
-        render(request, 'blog/post_list.html')
-    return render(request, 'blog/register.html')
+            auth.authenticate(username=request.POST['login'], password=request.POST['password'])
+            auth.login(request, user)
+            return redirect("/user/"+user.username)
+        return render(request, 'blog/register.html', {'error': error} )
+    return render(request, 'blog/register.html', {'error': error} )
 
 def login(request):
     login = request.POST['login']

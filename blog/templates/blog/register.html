@@ -18,6 +18,12 @@
          <span>E-mail</span><input type="text"     name="email" required></section>
          <div class="clear"></div>
          <button type="submit">Регистрация</button>
+
+         {% if error != "" %}
+            <script>
+               alert("{{error}}");
+            </script>
+         {% endif %}
       </form>
    </div>
 {% endblock %}

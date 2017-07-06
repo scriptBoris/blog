@@ -190,12 +190,28 @@ footer div{
 .post_edit  {background-image: url(post_edit.png);}
 .post_delete{background-image: url(post_delete.png);}
 .post_text {
+   float: left;
    text-align: left;
+   width: 100%;
 }
 .post_footer {
    display: block;
    position: relative;
-   float:right;
+   float:left;
+   width: 100%;
+}
+.post_footer a{
+   display: block;
+   float: right;
+   height: 28px;
+   margin-right: 28px;
+   background-image: url(rate.png);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+.post_footer a span{
+   padding-left: 28px;
+   font-size: 18pt;
 }
 .post-form textarea, .post-form input{
    width:100%;

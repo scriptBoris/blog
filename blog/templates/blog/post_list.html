@@ -10,7 +10,9 @@
          </div>
          <div class="post_text">{{ post.text }}</div>
          <div class="post_footer">
-            Рейтинг: {{ post.rate }}
+            <a href="#">
+               <span>{{ post.rate }}</span>
+            </a>
          </div>
       </div>
    {% endfor %}
