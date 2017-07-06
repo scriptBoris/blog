@@ -18,9 +18,7 @@
    <div id="paginator">
       <ul>
       {% if posts.has_previous %}
-
-      {% else %}
-
+         <li class="arrow"><a href="/page/{{ posts.previous_page_number }}">&laquo;</a></li>
       {% endif %}
 
       {% for page in posts.paginator.page_range %}
@@ -34,9 +32,7 @@
       {% endfor %}
 
       {% if posts.has_next %}
-
-      {% else %}
-
+         <li class="arrow"><a href="/page/{{ posts.next_page_number }}">&raquo;</a></li>
       {% endif %}
       </ul>
    </div>

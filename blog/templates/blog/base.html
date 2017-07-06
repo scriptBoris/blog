@@ -13,7 +13,7 @@
          <div id="logo">
             <div><a href="/"> </a></div>
          </div>
-         {% if user.is_authenticated == False %}
+         {% if request.user.is_authenticated == False %}
             <div id="userBox">
                <form method="POST" action="http://{{ request.get_host }}/auth/login">{% csrf_token %}
                   <input type="text"     name="login"    required placeholder="Логин">
@@ -24,7 +24,7 @@
             </div>
          {% else %}
             <div id="userBox">
-               Вы вошли как {{ user.username }} (<a href="http://{{ request.get_host }}/auth/logout">Выйти</a>)
+               Вы вошли как {{ request.user.username }} (<a href="http://{{ request.get_host }}/auth/logout">Выйти</a>)
             </div>
             <div class="menu" style="z-index:20;">
                <li><a href="{% url 'post_new' %}">Новый пост</a></li>

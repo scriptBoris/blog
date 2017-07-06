@@ -11,7 +11,7 @@ from .forms           import PostForm
 def post_list(request, page_num=1):
     posts = Post.objects.all().order_by('-created_date') #filter(created_date__lte=timezone.now()).order_by('-created_date')
     current_page = Paginator(posts, 5)
-    return render_to_response('blog/post_list.html', {'posts': current_page.page(page_num)} )
+    return render(request, 'blog/post_list.html', {'posts': current_page.page(page_num)} )
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -53,8 +53,10 @@ def register(request):
     if request.method == "POST":
         user = User.objects.create_user(request.POST['login'], request.POST['email'], request.POST['password'] )
         user.save()
-        if User == None:
-            render(request, 'blog/register.html')
+        if user == None:
+            return render(request, 'blog/register.html')
+        else:
+            return
         render(request, 'blog/post_list.html')
     return render(request, 'blog/register.html')
 
